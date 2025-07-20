@@ -1,0 +1,2 @@
+# handle change of power source ac/bat, ignore input device batteries
+ACTION=="change", SUBSYSTEM=="power_supply", KERNEL!="hidpp_battery*", RUN+="/bin/sh -c 'if [ $(cat /sys/class/power_supply/ADP1/online) -eq 1 ]; then /bin/echo turbo > /sys/kernel/mechrevo_perfmode/perfmode; else /bin/echo silence > /sys/kernel/mechrevo_perfmode/perfmode; fi'"
