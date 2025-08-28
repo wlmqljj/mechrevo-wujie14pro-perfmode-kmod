@@ -37,7 +37,7 @@ static enum mechrevo_powermode mechrevo_powermode_from_str(const char *str)
     return MECHREVO_INVALID;
 }
 
-// 读取ITSM字段（通过ECRD方法）
+// 读取ITSM字段
 static int ec_read_itsm(u8 *value)
 {
     acpi_handle handle;
@@ -66,6 +66,7 @@ static int ec_read_itsm(u8 *value)
     return 0;
 }
 
+// 写入ITSM字段
 static int ec_write_itsm(u8 value)
 {
     acpi_status status;
@@ -96,7 +97,7 @@ static int ec_write_itsm(u8 value)
     return 0;
 }
 
-// sysfs 节点 show/store
+// sysfs 节点 show/store 方法
 static struct kobject *mechrevo_kobj;
 
 static ssize_t perfmode_show(struct kobject *kobj, struct kobj_attribute *attr, char *buf)
