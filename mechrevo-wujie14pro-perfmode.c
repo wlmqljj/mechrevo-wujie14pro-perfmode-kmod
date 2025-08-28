@@ -5,7 +5,7 @@
 #include <linux/slab.h>
 
 #define DRV_NAME "mechrevo-wujie14pro-perfmode"
-#define ACPI_PATH_ECRD "\\_SB.PCI0.LPC0.H_EC.ECRD"
+
 #define ACPI_PATH_ECWT "\\_SB.PCI0.LPC0.H_EC.ECWT"
 #define ACPI_PATH_ITSM "\\_SB.PCI0.LPC0.H_EC.ITSM"
 #define TURBO "turbo"
