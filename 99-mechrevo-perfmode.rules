@@ -1,2 +1,5 @@
 # handle change of power source ac/bat, ignore input device batteries
-ACTION=="change", SUBSYSTEM=="power_supply", KERNEL!="hidpp_battery*", RUN+="/bin/sh -c 'if [ $(cat /sys/class/power_supply/ADP1/online) -eq 1 ]; then /bin/echo turbo > /sys/kernel/mechrevo_perfmode/perfmode; else /bin/echo silence > /sys/kernel/mechrevo_perfmode/perfmode; fi'"
+# 电源插入时 (Online=1)
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", KERNEL!="hidpp_battery*", RUN+="/usr/bin/sh -c '/usr/bin/echo turbo > /sys/kernel/mechrevo_perfmode/perfmode'"
+# 电源拔出时 (Online=0)
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", KERNEL!="hidpp_battery*", RUN+="/usr/bin/sh -c '/usr/bin/echo silence > /sys/kernel/mechrevo_perfmode/perfmode'"
