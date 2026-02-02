@@ -1,6 +1,7 @@
 obj-m += mechrevo-wujie14pro-perfmode.o
 
-KDIR := /lib/modules/$(shell uname -r)/build
+KVERSION ?= $(shell uname -r)
+KDIR := /lib/modules/$(KVERSION)/build
 PWD := $(shell pwd)
 
 all:
