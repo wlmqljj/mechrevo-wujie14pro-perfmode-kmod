@@ -1,4 +1,4 @@
-# mechrevo-wujie14pro-perfmode-kmod
+# mechrevo_wujie14pro_perfmode-kmod
 Mechrevo WuJie14Pro performance mode sysfs control kernel module  
 Tested under kernel 6.12-LTS  
 ## Introduction
